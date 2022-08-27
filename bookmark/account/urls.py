@@ -4,9 +4,10 @@ from django.contrib.auth.views import (
     PasswordChangeDoneView,PasswordResetView, PasswordResetCompleteView,
     PasswordResetDoneView, PasswordResetConfirmView
 )
-from .views import dashboard, user_login
+from .views import dashboard, user_login, register
 
 urlpatterns = [
+    path('register/', register, name='register'),
     # path('login/', user_login, name='login'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout', LogoutView.as_view(), name='logout'),

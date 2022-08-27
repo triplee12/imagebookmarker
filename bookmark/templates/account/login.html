@@ -2,7 +2,8 @@
 {% block title %}- Login-in {% endblock title %}
 {% block content %}
     <h1>Log-in</h1>
-    <p>Please, use the following form to login:</p>
+    <p>Please, use the following form to login. If you don't have an
+    account <a href="{% url "register" %}">register here</a></p>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
