@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     # Third party libraries
     'imagekit',
     'social_django',
+    'easy_thumbnails',
     # Self apps
     # 'account.apps.AccountConfig',
     'images.apps.ImagesConfig',
