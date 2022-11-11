@@ -15,6 +15,7 @@ import os
 import json
 import sys
 from django.core.exceptions import ImproperlyConfigured
+from django.urls import reverse_lazy
 
 # Get secret config
 with open(os.path.join(os.path.dirname(__file__), 'secrets.json'), 'r') as f:
@@ -77,6 +78,10 @@ ROOT_URLCONF = 'bookmark.urls'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
 
 TEMPLATES = [
     {
